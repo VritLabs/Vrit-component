@@ -1,7 +1,7 @@
 import { Button, Card } from '@mui/material'
 import {classNames as cls} from 'react-hook-classnames'
 export default function Cardlayout({button,background}) {
-  const value = -13
+  const value = 13
   const classname = cls("w-auto h-5 rounded-sm",{"bg-green-300":value>=0,"bg-red-200":value<0})
   
   return (
@@ -15,7 +15,7 @@ export default function Cardlayout({button,background}) {
         <div className='text-2xl'>24.465</div>
         <div className='flex space-x-2'>
           <div className={classname}>
-            + 14 %
+           {value}
           </div>
           <div>
             since last week
