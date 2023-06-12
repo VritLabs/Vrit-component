@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import {
     AppBar,
     Toolbar,
@@ -29,8 +29,14 @@ const Navbar = () => {
 
     return (
         <AppBar
-            position="static"
-            style={{ backgroundColor: "white", minHeight: "64px" }}
+            position="sticky"
+            style={{
+                backgroundColor: "white",
+                minHeight: "64px",
+                marginLeft: "230px",
+
+                width: "1190px",
+            }}
         >
             <Toolbar>
                 <Box
