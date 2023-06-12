@@ -1,11 +1,16 @@
-import React from "react";
 import { AppBar, Toolbar, Typography, Link, Box } from "@mui/material";
 
 const Footer = () => {
     return (
         <AppBar
             position="static"
-            style={{ backgroundColor: "white", marginBottom: "0" }}
+            style={{
+                backgroundColor: "white",
+                marginBottom: "0",
+                minHeight: "64px",
+                width: "1205px",
+                marginLeft: "220px",
+            }}
         >
             <Toolbar>
                 <Box display="flex" flexGrow={1}>

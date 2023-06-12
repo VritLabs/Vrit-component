@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import {
     Accordion,
     AccordionSummary,
@@ -20,7 +20,12 @@ import {
     Pages as PagesIcon,
     DescriptionOutlined as InvoicesIcon,
     VpnKey as AuthIcon,
+    Assignment as OrderIcon,
+    CalendarToday as CalenderIcon,
+    CheckCircle as TasksIcon,
+    Folder as ProjectsIcon,
 } from "@mui/icons-material";
+import profileLogo from "../assets/profileLogo.png";
 
 const Title = () => {
     return (
@@ -32,10 +37,10 @@ const Title = () => {
                 backgroundColor: "rgb(35, 48, 63)",
                 height: "63px",
                 fontSize: "30px",
-                marginTop: "",
+                marginTop: "15px",
             }}
         >
-            My App
+            MY APP
         </div>
     );
 };
@@ -53,6 +58,11 @@ const Sidebar = () => {
                 width: "300px",
                 backgroundColor: "rgb(35, 48, 63)",
                 color: "white",
+                variant: "permanent",
+                position: "fixed",
+                anchor: "left",
+                height: "100vh",
+                overflowY: "auto",
             }}
         >
             <Title />
@@ -63,7 +73,8 @@ const Sidebar = () => {
                         marginBottom: "10px",
                         paddingLeft: "20px",
                         backgroundColor: "rgb(35, 48, 63)",
-                        color: "white",
+                        color: "gray",
+                        fontSize: "15px",
                     }}
                 >
                     PAGES
@@ -231,6 +242,36 @@ const Sidebar = () => {
                     </AccordionDetails>
                 </Accordion>
 
+                <Accordion
+                    expanded={expandedAccordion === "projects"}
+                    onChange={handleAccordionChange("projects")}
+                    style={{ backgroundColor: "rgb(35, 48, 63)" }}
+                >
+                    <AccordionSummary>
+                        <ProjectsIcon style={{ color: "gray" }} />
+                        <Typography
+                            style={{ color: "white", marginLeft: "7px" }}
+                        >
+                            Projects
+                        </Typography>
+                    </AccordionSummary>
+                </Accordion>
+
+                <Accordion
+                    expanded={expandedAccordion === "orders"}
+                    onChange={handleAccordionChange("orders")}
+                    style={{ backgroundColor: "rgb(35, 48, 63)" }}
+                >
+                    <AccordionSummary>
+                        <OrderIcon style={{ color: "gray" }} />
+                        <Typography
+                            style={{ color: "white", marginLeft: "7px" }}
+                        >
+                            Orders
+                        </Typography>
+                    </AccordionSummary>
+                </Accordion>
+
                 {/* Invoices Accordion */}
                 <Accordion
                     expanded={expandedAccordion === "invoices"}
@@ -289,7 +330,36 @@ const Sidebar = () => {
                     </AccordionDetails>
                 </Accordion>
 
-                {/* Auth Accordion */}
+                <Accordion
+                    expanded={expandedAccordion === "tasks"}
+                    onChange={handleAccordionChange("tasks")}
+                    style={{ backgroundColor: "rgb(35, 48, 63)" }}
+                >
+                    <AccordionSummary>
+                        <TasksIcon style={{ color: "gray" }} />
+                        <Typography
+                            style={{ color: "white", marginLeft: "7px" }}
+                        >
+                            Tasks
+                        </Typography>
+                    </AccordionSummary>
+                </Accordion>
+
+                <Accordion
+                    expanded={expandedAccordion === "calender"}
+                    onChange={handleAccordionChange("calender")}
+                    style={{ backgroundColor: "rgb(35, 48, 63)" }}
+                >
+                    <AccordionSummary>
+                        <CalenderIcon style={{ color: "gray" }} />
+                        <Typography
+                            style={{ color: "white", marginLeft: "7px" }}
+                        >
+                            Calender
+                        </Typography>
+                    </AccordionSummary>
+                </Accordion>
+
                 <Accordion
                     expanded={expandedAccordion === "auth"}
                     onChange={handleAccordionChange("auth")}
@@ -386,6 +456,8 @@ const Sidebar = () => {
                         marginTop: "25px",
                         marginBottom: "10px",
                         paddingLeft: "20px",
+                        color: "gray",
+                        fontSize: "15px",
                     }}
                 >
                     ELEMENTS
@@ -918,8 +990,8 @@ const Sidebar = () => {
                     style={{
                         padding: "20px 0px 10px 20px",
                         backgroundColor: "rgb(35, 48, 63)",
-                        color: "white",
-                        fontSize: "14px",
+                        color: "gray",
+                        fontSize: "15px",
                     }}
                 >
                     MY APP PRO
@@ -952,6 +1024,21 @@ const Sidebar = () => {
                         <Link style={{ color: "white" }} href="#">
                             Changelog
                         </Link>
+                    </div>
+                </div>
+                <div className="sticky bottom-0 bg-black text-white flex items-center p-4y">
+                    <img
+                        src={profileLogo}
+                        alt="Man-Logo"
+                        style={{
+                            width: "40px",
+                            height: "40px",
+                            margin: "10px 15px 10px 20px",
+                        }}
+                    />
+                    <div className="mt-1">
+                        <div>Lucy Lavander</div>
+                        <div>UX Designer</div>
                     </div>
                 </div>
             </div>

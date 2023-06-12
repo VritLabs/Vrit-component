@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Button, Drawer, Typography } from "@mui/material";
 import { ColorLens } from "@mui/icons-material";
 import PropTypes from "prop-types";
@@ -98,7 +98,7 @@ const ColorButton = ({ onColorChange }) => {
                                 backgroundColor: "#E5F6FD",
                                 padding: "6px 16px",
                                 marginBottom: "16px",
-                                width: "208px",
+                                width: "250px",
                             }}
                         >
                             <Typography variant="body1">
