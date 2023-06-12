@@ -25,7 +25,6 @@ import {
     CheckCircle as TasksIcon,
     Folder as ProjectsIcon,
 } from "@mui/icons-material";
-import profileLogo from "../assets/profileLogo.png";
 
 const Title = () => {
     return (
@@ -1028,12 +1027,13 @@ const Sidebar = () => {
                 </div>
                 <div className="sticky bottom-0 bg-black text-white flex items-center p-4y">
                     <img
-                        src={profileLogo}
+                        src="https://mira.bootlab.io/static/img/avatars/avatar-1.jpg"
                         alt="Man-Logo"
                         style={{
                             width: "40px",
                             height: "40px",
                             margin: "10px 15px 10px 20px",
+                            borderRadius: "2rem",
                         }}
                     />
                     <div className="mt-1">
