@@ -23,9 +23,9 @@ function createData(source, revenue, value) {
 }
 
 const rows = [
-    createData('Frozen yoghurt', 159, 6.0),
-    createData('Ice cream sandwich', 237, 9.0),
-    createData('Eclair', 262, 16.0),
+    createData('Frozen yoghurt', 159, 6),
+    createData('Ice cream sandwich', 237, -9),
+    createData('Eclair', 262, 16),
 ];
 
 ChartJs.register(
@@ -33,8 +33,6 @@ ChartJs.register(
 )
 
 export default function Piechart() {
-    const value = -34
-    const className = cls({"text-red-700":value<0,"text-green-500":value>=0})
     const data = {
         labels: ["one", "two", "three"],
         datasets: [{
@@ -45,7 +43,7 @@ export default function Piechart() {
         ]
     };
     const options = {
-        cutout: 100,
+        cutout: 95,
         aspectRatio: 1.4
     }
 
@@ -80,7 +78,7 @@ export default function Piechart() {
                                 {row.source}
                             </TableCell>
                             <TableCell className='text-black' >{row.revenue}</TableCell>
-                            <TableCell className={className}>{row.value}</TableCell>
+                            <TableCell className={cls({"text-red-600":row.value<=0,"text-green-500":row.value>=0})}>{row.value}</TableCell>
                         </TableRow>
                     ))}
                 </TableBody>
